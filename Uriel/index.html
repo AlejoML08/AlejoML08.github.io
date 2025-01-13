@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios de Pintado Profesional</title>
+    <meta name="description" content="Servicios profesionales de pintado para interiores y exteriores. Transformamos espacios con acabados impecables y materiales premium.">
+    <link rel="icon" href="img/uri logo.png">
+    <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/vue@3.5.13/dist/vue.global.js"></script>
+</head>
+<body class="bg-white">
+    <div id="app">
+        <header class="border-b border-gray-200">
+            <nav class="container mx-auto px-1 py-1.5 flex items-center">
+                <div class="img1"><img src="img/Proyecto nuevo (4).png" alt="imagen"></div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="container mx-auto px-4 py-12">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="carousel-images">
+                    <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f" 
+                         alt="Profesional pintando" 
+                         class="rounded-lg shadow-lg w-full h-[400px] object-cover">
+                        </div>
+                    <div>
+                        <h1 class="text-3xl font-bold mb-4">En ______ ofrecemos servicios de pintado de alta calidad para interiores y exteriores.</h1>
+                        <p class="text-gray-600 mb-2"> Nuestro equipo profesional se encarga de cada detalle,
+                            utilizando materiales premium y una amplia gama de colores. Nos comprometemos a transformar sus espacios con un acabado impecable y duradero.</p>
+                        <p class="text-gray-600 mb-4">¡Contáctenos para darle vida a su hogar o negocio!.</p>
+                        <button @click="contactar" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                            ¡Contáctenos!
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-gray-50 py-12">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-2xl font-bold mb-8">Imágenes de otros proyectos</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div v-for="(proyecto, index) in proyectos" :key="index" 
+                             class="rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
+                            <img :src="proyecto.imagen" :alt="proyecto.descripcion" 
+                                 class="w-full h-64 object-cover">
+                            <div class="p-4 bg-white">
+                                <h3 class="font-semibold mb-2">{{ proyecto.titulo }}</h3>
+                                <p class="text-gray-600 text-sm">{{ proyecto.descripcion }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+<script src="script.js"> </script>
+</body>
+</html>
